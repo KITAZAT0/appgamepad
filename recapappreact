@@ -1,0 +1,25 @@
+1 - installation divers (à faire)
+
+2 - npx create-react-app appgamepad
+
+debut de l'application, installe le minimum de react
+
+2 - 3 cd appgamepad 
+
+deplacement dans le dossier appgamepad
+
+3 - npm start
+
+lance le serveur node react
+
+4.a - ajout de bootstrap et de react-icons
+
+npm install bootstrap react-icons jquery popper.js –save
+
+4.b - import de bootstrap dans index.js
+ 
+import'bootstrap/dist/css/bootstrap.min.css';
+
+4.c - import des icones necessaires dans app.js (exemple d'icones)
+
+import{FaListAlt,FaCheckSquare,FaPlusSquare,FaTrash} from'react-icons/fa'
