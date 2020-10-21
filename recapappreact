@@ -23,3 +23,87 @@ import'bootstrap/dist/css/bootstrap.min.css';
 4.c - import des icones necessaires dans app.js (exemple d'icones)
 
 import{FaListAlt,FaCheckSquare,FaPlusSquare,FaTrash} from'react-icons/fa'
+
+5 - structurer le code
+
+création dans le dossier src d'un dossier components qui aura les composants (js sauf l'index qui est externe et sert de porte d'acces au reste) de l'application et la création d'un dossier css qui aura les css
+
+5 - faire la liaison des fichiers js et css
+
+dans index.js
+
+import App from' ./App'; 
+
+devient:
+
+import App from'./components/App';
+
+------------------------------------------------------------------------------------
+
+dans App.js (synchro du css qui va avec App.js)
+
+import './App.css';
+
+devient:
+
+import '../css/App.css';
+
+------------------------------------------------------------------------------------
+
+dans index.js (synchro du css qui va avec index.js)
+
+import './index.css';
+
+devient:
+
+import './css/index.css';
+
+
+
+
+/!\/!\ IMPORT ET EXPORT /!\/!\
+
+6 - export default App; (dans le fichier App.js)
+
+autorise l'export pour pouvoir faire l'import dans un autre module
+
+
+7 - import App from './components/App'; (dans le fichier index.js)
+
+importe le module App qui à été préalablement mis à disposition pour l'export ci-dessus
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+8 - npm install react-router-dom --save
+
+permet l'utilisation des routes
+
+9 - import {BrowserRouter,Switch,Route} from 'react-router-dom'
+
+permet l'utilisation de BrowserRouter,Switch et Route.
+
+10 - ajout de l'import de browserrouter du switch de route
+
+
+code relatif:
+
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+
+function AppGamePad() {
+  return (
+    <section id="todo">
+      <h1 className="m-3">choix</h1>
+      <BrowserRouter>
+        <NavBarUp />
+        <Switch>
+          <Route path="/new-user" component={NewUser} />
+          {/* <Route path="/:filter?" component={ToDoList} /> */}
+        </Switch>
+        <NavBarDown />
+      </BrowserRouter>
+      <Body />
+    </section>
+  );
+}
+
+11 - 
