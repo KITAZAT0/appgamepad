@@ -1,4 +1,9 @@
+/*import fichiers react node_modules */
+/*import CSS*/
+/*import JS*/ 
 import React from 'react';
+
+
 import '../css/AppGamePad.css';
 import NavBarUp from "./NavBarUp.js";
 import Body from "./Body.js";
@@ -8,8 +13,7 @@ import NewUser from './NewUser';
 
 function AppGamePad() {
   return (
-    <section id="todo">
-      <h1 className="m-3">choix</h1>
+    <section>
       <BrowserRouter>
         <NavBarUp />
         <Switch>

@@ -1,10 +1,13 @@
+/*import fichiers react node_modules */
+/*import CSS*/
+/*import JS*/ 
 import React from "react";
 import "../css/Body.css";
 
 function Body() {
   return (
     <>
-      {/* <h1 className="m-3">Liste de tâches</h1>
+      <h1 className="m-3">Liste de tâches</h1>
       <ul className="list-group m-3">
         <li className="list-group-item d-flex align-items-center">
           Ranger la vaisselle
@@ -30,7 +33,7 @@ function Body() {
             &#x2713;
           </button>
         </li>
-      </ul> */}
+      </ul>
     </> //ceci est un fragment !
   );
 }

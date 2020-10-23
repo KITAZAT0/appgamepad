@@ -1,6 +1,15 @@
+/*import fichiers react node_modules */
 import React from "react";
+import {
+  FaListAlt,
+  FaCheckSquare,
+  FaPlusSquare,
+  FaTrash,
+} from "react-icons/fa";
+/*import CSS*/
 import "../css/NavBarDown.css";
-import { FaListAlt, FaCheckSquare, FaPlusSquare,  FaTrash,} from "react-icons/fa";
+/*import JS*/ 
+
 
 function NavBarDown() {
   return (
