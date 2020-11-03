@@ -16,9 +16,12 @@ import ToDo from "./ToDo";
 } */
 
 function ToDoList(props) {
+  console.log("props");
   console.log(props);
   let filteredTasks = [];
+  console.log("filteredTasks avant le switch");
   console.log(filteredTasks);
+  console.log("props.tasks");
   console.log(props.tasks);
 
   switch (props.match.params.filter) {
@@ -28,7 +31,8 @@ function ToDoList(props) {
     default:
       filteredTasks = props.tasks;
   }
-
+console.log("filteredTasks apres le switch");
+console.log(filteredTasks);
   return (
     <>
       {/* <ul className="list-group m-3">
@@ -43,9 +47,14 @@ function ToDoList(props) {
       </ul>  */}
       <ul>
         {filteredTasks.length > 0
-          ? filteredTasks.map((filteredTasks, index) => {
+          ? filteredTasks.map((item, index) => {
             return (
-              <ToDo key={index} modif={props.modif} tasks={filteredTasks} />
+              <ToDo
+                cle={index}
+                key={index}
+                modif={props.modif}
+                tasks={filteredTasks}
+              />
             );
           })
           : "Aucune tâche à afficher."}
