@@ -15,7 +15,6 @@ import ToDo from "./ToDo";
     )
 } */
 
-/* version Horia */
 function ToDoList(props) {
   console.log(props);
   let filteredTasks = [];
@@ -32,7 +31,7 @@ function ToDoList(props) {
 
   return (
     <>
-        {/* <ul className="list-group m-3">
+      {/* <ul className="list-group m-3">
         {props.tasks.map((task, index) => (
           <li key={index} className="list-group-item d-flex align-items-center">
             {task.name}
@@ -42,20 +41,17 @@ function ToDoList(props) {
           </li>
         ))}
       </ul>  */}
-       <ul>
+      <ul>
         {filteredTasks.length > 0
-          ? filteredTasks.map((task, index) => (
-              <ToDo
-                cle={index}
-                key={index}
-                modif={props.modif}
-                tasks={filteredTasks}
-              />
-            ))
+          ? filteredTasks.map((filteredTasks, index) => {
+            return (
+              <ToDo key={index} modif={props.modif} tasks={filteredTasks} />
+            );
+          })
           : "Aucune tâche à afficher."}
       </ul>
     </>
-  )
+  );
 }
 
 export default ToDoList;
