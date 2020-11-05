@@ -1,18 +1,18 @@
 /*import fichiers react node_modules */
 import React from "react";
 /*import CSS*/
-import "../css/NewUser.css";
 /*import JS*/ 
 
 
 
+
+
+function NewUser() {
+  
 function handleSubmit() {}
 
 function newUser() {}
 
-
-
-function NewUser() {
   return (
     <>
       <section id="cover" className="min-vh-100">
