@@ -2,7 +2,6 @@
 import React, {useState, /* useContext */} from "react";
 import { FaListAlt, FaPlusSquare, FaTrash } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-/*import CSS*/
 /*import JS*/
 /* import ContextBL from "./ContextBL"; */ //met à disposition le fichier react context
 
@@ -15,7 +14,7 @@ function NavBarUp() {
     <>
       <header
         className="d-flex justify-content-between bg-secondary p-3"
-        id="mainHeader"
+        id="NavBarUp"
       >
         <div className="btn-group">
           <NavLink
