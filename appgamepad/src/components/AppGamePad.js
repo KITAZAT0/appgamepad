@@ -36,9 +36,10 @@ function AppGamePad() {
           <Route path="/log" render={(props) => <LoginUser {...props} />} />
           <Route path="/delog" render={(props) => <DelogUser {...props} />} />
         </Switch>
-        <Footer />
-        <TopArrow />
       </BrowserRouter>
+      <TopArrow />
+      <Footer />
+
       {/*  </ContextBL.Provider> */}
       {/* tout ce qui est à l'interieur de <ContextBL.Provider> et </ContextBL.Provider> pourra utiliser les variables de ContextBL  */}
     </section>

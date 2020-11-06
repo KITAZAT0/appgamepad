@@ -1,15 +1,23 @@
 /*import fichiers react node_modules */
-import React, { /* useState */ /* useContext */ } from "react";
+import React, { useState } from "react";
 /*import CSS*/
 /*import JS*/
 /* import ContextBL from "./ContextBL"; */ 
 
 
 function LoginUser() {
+    const [loginForm, setLoginForm] = useState({userEmail:"", userPassword:""});
 
-function handleSubmit() {}
+function changeLoginForm(e) {
+    let newLoginForm = Object.assign({}, loginForm);
+    newLoginForm[e.target.name] = e.target.value;
+    setLoginForm(newLoginForm);
+    console.log(newLoginForm);
+} 
 
-function loginUser() {}
+
+function handleSubmit(e) {e.preventDefault()}
+
 
   return (
     <>
@@ -21,7 +29,6 @@ function loginUser() {}
                 <h1 className="display-4 py-2 text-truncate">Login</h1>
                 <div className="px-2">
                   <form
-                    action=""
                     className="justify-content-center"
                     onSubmit={(e) => handleSubmit(e)}
                   >
@@ -31,10 +38,11 @@ function loginUser() {}
                         type="text"
                         className="form-control"
                         placeholder="email: aquaponey@example.com"
-                        name="userPassword"
-                        id="userPassword"
+                        name="userEmail"
+                        id="userEmail"
+                        value={loginForm.userEmail}
                         required
-                        ref={loginUser}
+                        onChange={changeLoginForm}
                       ></input>
                     </div>
                     <div className="form-group">
@@ -45,8 +53,9 @@ function loginUser() {}
                         placeholder="Password"
                         name="userPassword"
                         id="userPassword"
+                        value={loginForm.userPassword}
                         required
-                        ref={loginUser}
+                        onChange={changeLoginForm}
                       ></input>
                     </div>
                     <button type="submit" className="btn btn-primary btn-lg">

@@ -80,7 +80,7 @@ a:focus {
 img {
  max-width:100%;
  width: 100px;
- 
+
 }
 p {
  font-size:16px;
@@ -119,7 +119,7 @@ a {
  text-align:center
 }
 .go_top span {
- display:inline-block
+ display: inline-block
 }
 .footer-big {
  padding:30px 0 30px 0
@@ -202,18 +202,18 @@ a {
 /*////////////////////////////////////////////////////////////////////////////////////////////*/
 
 
-App {
+AppGamePad {
   text-align: center;
   height: 5000px;
 }
 
 .scrollTop {
   position: fixed; 
-  width: 100%;
+  width: 50%;
   bottom: 20px;
-  align-items: center;
+  align-items: end;
   height: 20px;
-  justify-content: center;
+  justify-content: right;
   z-index: 1000;
   cursor: pointer;
   animation: fadeIn 0.3s;
@@ -232,4 +232,6 @@ App {
   100% {
     opacity: 0.5;
   }
+
 }
+
