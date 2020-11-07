@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 /*import CSS*/
 /*import JS*/
-/* import ContextBL from "./ContextBL"; */ 
+/* import ContextBL from "./ContextBL"; */
+import axios from "axios";
 
 
 function LoginUser() {
@@ -16,7 +17,15 @@ function changeLoginForm(e) {
 } 
 
 
-function handleSubmit(e) {e.preventDefault()}
+function handleSubmit(e) {e.preventDefault()
+
+  axios.post("http://monURL")
+          .then((res) => {
+            console.log(res);
+            console.log(res.data);
+          })
+}
+
 
 
   return (
