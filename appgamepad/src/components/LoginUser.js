@@ -1,32 +1,42 @@
 /*import fichiers react node_modules */
 import React, { useState } from "react";
-/*import CSS*/
-/*import JS*/
-/* import ContextBL from "./ContextBL"; */
 import axios from "axios";
 
-
 function LoginUser() {
-    const [loginForm, setLoginForm] = useState({userEmail:"", userPassword:""});
+  const [loginForm, setLoginForm] = useState({
+    userEmail: "",
+    userPassword: "",
+  });
 
-function changeLoginForm(e) {
+  function changeLoginForm(e) {
     let newLoginForm = Object.assign({}, loginForm);
     newLoginForm[e.target.name] = e.target.value;
     setLoginForm(newLoginForm);
+    console.log(e.target.name);
+    console.log(e.target.value);
     console.log(newLoginForm);
-} 
+  }
 
+  async function handleSubmit(e) {
+    e.preventDefault();
 
-function handleSubmit(e) {e.preventDefault()
-
-  axios.post("http://monURL")
-          .then((res) => {
-            console.log(res);
-            console.log(res.data);
-          })
-}
-
-
+    await axios
+      .post("http://localhost:3000/user/login", {
+        user: { email: loginForm.userEmail, password: loginForm.userPassword },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization:
+            "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im56RldrVmNTc28yMnJucXhULTJtUCJ9.eyJpc3MiOiJodHRwczovL2FwaWdhbWVwYWQuZXUuYXV0aDAuY29tLyIsInN1YiI6IkNPNUs2UmFQVVdUSHdsMkpuZ1BQWU9xV3hBUjZxSjhvQGNsaWVudHMiLCJhdWQiOiJodHRwczovL0dhbWVQYWQtQVBJIiwiaWF0IjoxNjA1MTc0NjgwLCJleHAiOjE2MDUyNjEwODAsImF6cCI6IkNPNUs2UmFQVVdUSHdsMkpuZ1BQWU9xV3hBUjZxSjhvIiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIn0.nosUiQGedlyEsYeOb3EJTJVgKrztj9aRBqhz6VjNiEEJw7BJKwQ8v2gPKAzyoyJrFXGdH9iAR2lMdos80qtBOA9dxvdHZR9oVWjbqfuiUQsPFSjwe60OLXKK5HLybCe1FCBYsYWdGmUDNxcy1LEjhhOM4-TyjeBok06XK9rT6EisSYteSMjmBtc-BCQoZrM0n63fxtqJ1X8PCHAE58AzByLIqVN7HZMqxMvmi5hCACVkjNig1q4tEJPbzipsZ8QdtQrmuy2r_bnNM95xBvSJxNvKvLZ85njGaa0op9MVkj1rRNEzdcUsKVaGl9wZj5yE8HRNpKs22w8xoiH7fGtuKw",
+        },
+      })
+      .then(function (res) {
+        console.log(res);
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+      
+  }
 
   return (
     <>

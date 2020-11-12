@@ -23,7 +23,7 @@ function TopArrow() {
         <FaArrowCircleUp
           className="scrollTop"
           onClick={scrollTop}
-          style={{ width: 200 , display: showScroll ? "flex" : "none" }}
+          style={{ width: 100 , display: showScroll ? "flex" : "none" }}
         />
     </>
   );

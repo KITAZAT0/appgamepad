@@ -1,17 +1,45 @@
 /*import fichiers react node_modules */
-import React from "react";
+import React, { useState } from "react";
 /*import CSS*/
 /*import JS*/ 
-
-
-
+import axios from "axios";
 
 
 function NewUser() {
-  
-function handleSubmit() {}
+    const [userForm, setNewUserForm] = useState({
+      userName: "",
+      userEmail: "",
+      userPassword: "",
+      userRoles: "[]",
+    });
 
-function newUser() {}
+function changeNewUserForm(e) {
+    let newUserForm = Object.assign({}, userForm);
+    newUserForm[(e.target.name)] = e.target.value;
+    setNewUserForm(newUserForm);
+    console.log(e.target.name);
+    console.log(e.target.value);
+    console.log(newUserForm);
+} 
+function handleSubmit(e) {
+  e.preventDefault();
+
+  axios
+    .post("http://localhost:3000/user/create", {
+      user: {
+        name: userForm.userName,
+        email: userForm.userEmail,
+        password: userForm.userPassword,
+      },
+    })
+    .then(function (res) {
+      console.log(res);
+    })
+    .catch(function (err) {
+      console.log(err);
+    }); 
+}
+
 
   return (
     <>
@@ -23,7 +51,6 @@ function newUser() {}
                 <h1 className="display-4 py-2 text-truncate">register</h1>
                 <div className="px-2">
                   <form
-                    action=""
                     className="justify-content-center"
                     onSubmit={(e) => handleSubmit(e)}
                   >
@@ -35,8 +62,9 @@ function newUser() {}
                         placeholder="username: Limascargot"
                         name="userName"
                         id="userName"
+                        value={userForm.userName}
                         required
-                        ref={newUser}
+                        onChange={changeNewUserForm}
                       ></input>
                     </div>
                     <div className="form-group">
@@ -45,10 +73,11 @@ function newUser() {}
                         type="text"
                         className="form-control"
                         placeholder="email: aquaponey@example.com"
-                        name="userPassword"
-                        id="userPassword"
+                        name="userEmail"
+                        id="userEmail"
+                        value={userForm.userEmail}
                         required
-                        ref={newUser}
+                        onChange={changeNewUserForm}
                       ></input>
                     </div>
                     <div className="form-group">
@@ -59,26 +88,31 @@ function newUser() {}
                         placeholder="Password"
                         name="userPassword"
                         id="userPassword"
+                        value={userForm.userPassword}
                         required
-                        ref={newUser}
+                        onChange={changeNewUserForm}
                       ></input>
                     </div>
-                    <div className="form-group">
+                    {/* <div className="form-group">
                       <label className="sr-only">Confirm Password</label>
                       <input
                         type="text"
                         className="form-control"
                         placeholder="Confirm Password"
-                        name="userEmail"
-                        id="userEmail"
+                        name="userConfirmPassword"
+                        id="userConfirmPassword""
+                        value={userForm.userConfirmPassword"}
                         required
-                        ref={newUser}
+                        onChange={changeNewUserForm}
                       ></input>
-                    </div>
+                    </div> */}
                     <button
+                      
                       type="submit"
                       className="btn btn-primary btn-lg"
-                    >Submit</button>
+                    >
+                      Submit
+                    </button>
                   </form>
                 </div>
               </div>

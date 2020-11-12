@@ -13,23 +13,13 @@ import LoginUser from "./LoginUser.js";
 import DelogUser from "./DelogUser.js";
 import TopArrow from "./TopArrow.js";
 
-/* import ContextBL from "./ContextBL"; */ /* import du fichier ContextBL */
 
 function AppGamePad() {
 
- /*  const number = '6'; 
-  const ecu = '8';
-  const top = '4'; */
-  //variable d'exemple pour le state et context
-
-
- /*  const valeurcontext = {number, ecu, top}; */ // les variables ci-dessus sont intégré à valeurcontext
   return (
     <section>
-      {/* <ContextBL.Provider value={valeurcontext}> */}
-      {/* contextBL fait référence à l'import, valeurcontext fait référence à la variable */}
       <BrowserRouter>
-        <NavBarUp /* nombre={number} */ />
+        <NavBarUp/>
         <Switch>
           <Route exact path="/" render={(props) => <Accueil {...props} />} />
           <Route path="/new-user" render={(props) => <NewUser {...props} />} />
@@ -39,9 +29,6 @@ function AppGamePad() {
       </BrowserRouter>
       <TopArrow />
       <Footer />
-
-      {/*  </ContextBL.Provider> */}
-      {/* tout ce qui est à l'interieur de <ContextBL.Provider> et </ContextBL.Provider> pourra utiliser les variables de ContextBL  */}
     </section>
   );
 }

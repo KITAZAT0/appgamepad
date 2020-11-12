@@ -105,10 +105,10 @@ function Footer() {
                 <div className="copyright-text">
                   <p>
                     © 2020
-                    <a href="#">
+                  
                       {" "}
                       Kevin Brandao-Beauchard React Project DWWM AFPA2020{" "}
-                    </a>
+                    
                     . All rights reserved.
                     {/*  Created by
                     <a href="#"></a> */}
