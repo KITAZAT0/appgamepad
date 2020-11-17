@@ -31,7 +31,6 @@ function NavBarUp() {
          className="btn btn-outline-dark bg-light"> 
             <FaPlusSquare />
           </NavLink>
-        {/* <span>{ecu}</span> */} {/* exemple d'utilisation d'une variable dans le html */}
         </div>
         <button className="btn btn-outline-dark bg-light">
           <FaTrash />

@@ -212,7 +212,7 @@ AppGamePad {
   width: 50px;
   bottom: 90px;
   right: 2px;
-  height: 20px;
+  height: 40px;
   z-index: 1000;
   cursor: pointer;
   animation: fadeIn 0.3s;
