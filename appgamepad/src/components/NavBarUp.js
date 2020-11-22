@@ -1,15 +1,17 @@
 /*import fichiers react node_modules */
-import React, {useState, /* useContext */} from "react";
-import { FaListAlt, FaPlusSquare, FaTrash } from "react-icons/fa";
+import React, {useState} from "react";
+import { FaListAlt, FaPlusSquare } from "react-icons/fa";
+import { RiLogoutBoxRFill, /* RiLoginBoxFill */ } from "react-icons/ri";
+import { CgDarkMode } from "react-icons/cg";
 import { NavLink } from "react-router-dom";
-/*import JS*/
-/* import ContextBL from "./ContextBL"; */ //met à disposition le fichier react context
+
+
 
 
 function NavBarUp() {
-  const [connect, /* setConnect */] = useState(true);  // exemple de State
+  const [connect, /* setConnect */] = useState(true);  
 
- /*  const { number, ecu, top } = useContext(ContextBL); */ //principe de la variable global, variables qui viennent depuis AppGamePad, tres pratique pour aller loin dans la parenté sans devoir passé les props manuellement
+ 
   return (
     <>
       <header
@@ -27,13 +29,16 @@ function NavBarUp() {
           <NavLink to="/new-user" className="btn btn-outline-dark bg-light">
             <FaPlusSquare />
           </NavLink>
-         <NavLink to= {connect === true ? "/delog" : "/log"} // si connect est identique à true alors j'affiche la route delog sinon j'affiche log
-         className="btn btn-outline-dark bg-light"> 
-            <FaPlusSquare />
+          <NavLink
+            to={connect === false ? "/delog" : "/log"} // si connect est identique à false alors j'affiche la route log sinon j'affiche delog
+            className="btn btn-outline-dark bg-light"
+          >
+            <RiLogoutBoxRFill />
+            {/* <RiLoginBoxFill /> */}
           </NavLink>
         </div>
         <button className="btn btn-outline-dark bg-light">
-          <FaTrash />
+          <CgDarkMode />
         </button>
       </header>
     </>

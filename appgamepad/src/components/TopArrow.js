@@ -5,6 +5,7 @@ import { FaArrowCircleUp } from "react-icons/fa";
 function TopArrow() {
 
   const [showScroll, setShowScroll] = useState(false);
+  
   const checkScrollTop = () => {
     if (!showScroll && window.pageYOffset > 400) {
       setShowScroll(true);

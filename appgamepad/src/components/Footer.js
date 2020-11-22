@@ -1,16 +1,12 @@
 /*import fichiers react node_modules */
 import React from "react";
 import { FiPhone, FiMail } from "react-icons/fi";
-/*import CSS*/
-/*import JS*/ 
+
 
 
 function Footer() {
-
-  
-
   return (
-    <>
+    <> {/* fragment syntaxe concise*/}
       <footer className="footer-area footer-light">
         <div className="footer-big">
           <div className="container">
@@ -26,11 +22,11 @@ function Footer() {
                     <span></span>
                     <p> GamePad 
                       <br></br>
-                      les mini-jeux par navigateur </p>
+                      Browser Games </p>
                     <ul className="contact-details">
                       <li>
                         <span>
-                          <FiPhone />
+                          <FiPhone /> {/* composant import react icons */}
                         </span>
                         <a href="tel:06 50 60 70 80"> 06 50 60 70 80</a>
                       </li>
@@ -51,19 +47,19 @@ function Footer() {
                     <h4 className="footer-widget-title">Popular Category</h4>
                     <ul>
                       <li>
-                        <a href="#">Wordpress</a>
+                        <a href="#">Memory Games</a>
                       </li>
                       <li>
-                        <a href="#">Plugins</a>
+                        <a href="#">Word Games</a>
                       </li>
                       <li>
-                        <a href="#">Joomla Template</a>
+                        <a href="#">Puzzle Games</a>
                       </li>
                       <li>
-                        <a href="#">Admin Template</a>
+                        <a href="#">Chess Games</a>
                       </li>
                       <li>
-                        <a href="#">HTML Template</a>
+                        <a href="#">Geography Games</a>
                       </li>
                     </ul>
                   </div>

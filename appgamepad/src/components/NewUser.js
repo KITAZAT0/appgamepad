@@ -1,7 +1,5 @@
 /*import fichiers react node_modules */
 import React, { useState } from "react";
-/*import CSS*/
-/*import JS*/
 import axios from "axios";
 
 
