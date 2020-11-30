@@ -31,15 +31,14 @@ function NewUser() {
   }
 
   const addUser = async (data) => {
-    const res = await axios
-      .post(`http://localhost:3000/user/create`, data, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im56RldrVmNTc28yMnJucXhULTJtUCJ9.eyJpc3MiOiJodHRwczovL2FwaWdhbWVwYWQuZXUuYXV0aDAuY29tLyIsInN1YiI6IkNPNUs2UmFQVVdUSHdsMkpuZ1BQWU9xV3hBUjZxSjhvQGNsaWVudHMiLCJhdWQiOiJodHRwczovL0dhbWVQYWQtQVBJIiwiaWF0IjoxNjA1MTc0NjgwLCJleHAiOjE2MDUyNjEwODAsImF6cCI6IkNPNUs2UmFQVVdUSHdsMkpuZ1BQWU9xV3hBUjZxSjhvIiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIn0.nosUiQGedlyEsYeOb3EJTJVgKrztj9aRBqhz6VjNiEEJw7BJKwQ8v2gPKAzyoyJrFXGdH9iAR2lMdos80qtBOA9dxvdHZR9oVWjbqfuiUQsPFSjwe60OLXKK5HLybCe1FCBYsYWdGmUDNxcy1LEjhhOM4-TyjeBok06XK9rT6EisSYteSMjmBtc-BCQoZrM0n63fxtqJ1X8PCHAE58AzByLIqVN7HZMqxMvmi5hCACVkjNig1q4tEJPbzipsZ8QdtQrmuy2r_bnNM95xBvSJxNvKvLZ85njGaa0op9MVkj1rRNEzdcUsKVaGl9wZj5yE8HRNpKs22w8xoiH7fGtuKw", //token test Auth0
-        },
-        withCredentials: true
-      });
+    const res = await axios.post(`http://localhost:3000/user/create`, data, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im56RldrVmNTc28yMnJucXhULTJtUCJ9.eyJpc3MiOiJodHRwczovL2FwaWdhbWVwYWQuZXUuYXV0aDAuY29tLyIsInN1YiI6IkNPNUs2UmFQVVdUSHdsMkpuZ1BQWU9xV3hBUjZxSjhvQGNsaWVudHMiLCJhdWQiOiJodHRwczovL0dhbWVQYWQtQVBJIiwiaWF0IjoxNjA2NzU3MTAyLCJleHAiOjE2MDY4NDM1MDIsImF6cCI6IkNPNUs2UmFQVVdUSHdsMkpuZ1BQWU9xV3hBUjZxSjhvIiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIn0.iQlfyxOtBX4r1jDUpyc4uRJZSPkgUsV9q1an2XvD0u7B3O4C3tK19p4Dne1eif3-IAbWvzdTmFBuaIl-_h7g-iYzllJ7kDoqqvGvC7hojZGs_LGSnkIPnqGLx84lgUE_5OZKnPYT7OxgOvXl2y4rQCDXKOYsy3R0NaClXTdSFcNA42HkuLhO6nDa7dhZ44SKcBQ1RwH59gTZbFgHCNTe3NQUzhd3qSI5GbKntiW9E-1kr6gQi9Y9JFTwUtDP_fEAXqBNLLghMgGFEsDoTUzXd89fq4tAVfOHbvkcCgRIZyMWxZHKwKa43Ou4YpPh3onZwhkw3hgg3yLCPrcFxhVdUA", //token test Auth0
+      },
+      withCredentials: true,
+    });
     console.log("res");
     console.log(res);
   };
